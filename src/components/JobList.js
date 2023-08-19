@@ -2,14 +2,19 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 const JobList = ({ jobs, searchValue }) => {
+  const lowerCaseSearchValue = searchValue.toLowerCase();
+
   const filteredJobs = jobs.filter((job) => {
-    const lowerCaseTitle = job.title.toLowerCase();
-    const lowerCaseCompany = job.company.toLowerCase();
-    const lowerCaseDescription = job.description.toLowerCase();
+    const lowerCaseTitle = job.title.toLowerCase().replace(/\s/g, "");
+    const lowerCaseCompany = job.company.toLowerCase().replace(/\s/g, "");
+    const lowerCaseDescription = job.description
+      .toLowerCase()
+      .replace(/\s/g, "");
+
     return (
-      lowerCaseTitle.includes(searchValue) ||
-      lowerCaseCompany.includes(searchValue) ||
-      lowerCaseDescription.includes(searchValue)
+      lowerCaseTitle.includes(lowerCaseSearchValue) ||
+      lowerCaseCompany.includes(lowerCaseSearchValue) ||
+      lowerCaseDescription.includes(lowerCaseSearchValue)
     );
   });
 
