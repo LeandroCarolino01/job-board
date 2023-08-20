@@ -21,13 +21,15 @@ const JobList = ({ jobs, searchValue }) => {
   return (
     <div>
       {filteredJobs.map((job) => (
-        <Card key={job.id}>
+        <Card key={job.id} className="mt-3">
           <Card.Body>
             <Card.Title>{job.title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
               {job.company}
             </Card.Subtitle>
             <Card.Text>{job.description}</Card.Text>
+            <Card.Text>{job.location}</Card.Text>
+            <Card.Text>{job.framework}</Card.Text>
           </Card.Body>
         </Card>
       ))}

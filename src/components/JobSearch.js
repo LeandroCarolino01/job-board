@@ -3,10 +3,51 @@ import { Form, Col, Container, Row } from "react-bootstrap";
 import JobList from "./JobList";
 
 const mockData = [
-  { id: 1, title: "Job 1", company: "Company A", description: "Description A" },
-  { id: 2, title: "Job 2", company: "Company B", description: "Description B" },
-  { id: 3, title: "Job 3", company: "Company C", description: "Description C" },
-  // Add more mock job data here
+  {
+    id: 1,
+    title: "Frontend Developer",
+    company: "TechCo",
+    description:
+      "We are seeking a skilled Frontend Developer to join our dynamic team...",
+    location: "San Francisco, CA",
+    framework: "React",
+  },
+  {
+    id: 2,
+    title: "UI/UX Designer",
+    company: "DesignFirm",
+    description:
+      "We're looking for a creative UI/UX Designer to create amazing user experiences...",
+    location: "New York, NY",
+    framework: "React",
+  },
+  {
+    id: 3,
+    title: "Full Stack Engineer",
+    company: "WebDev Solutions",
+    description:
+      "Join our team as a Full Stack Engineer to build innovative web applications...",
+    location: "Seattle, WA",
+    framework: "Vue",
+  },
+  {
+    id: 4,
+    title: "Frontend Engineer",
+    company: "TechStart",
+    description:
+      "TechStart is searching for a Frontend Engineer with a passion for Angular...",
+    location: "Austin, TX",
+    framework: "Angular",
+  },
+  {
+    id: 5,
+    title: "React Native Developer",
+    company: "AppWorks",
+    description:
+      "AppWorks is hiring a React Native Developer to craft cross-platform mobile apps...",
+    location: "Los Angeles, CA",
+    framework: "React",
+  },
 ];
 
 const JobSearch = () => {
@@ -31,10 +72,9 @@ const JobSearch = () => {
         <Col xs={6}>
           <Form>
             <Form.Group controlId="simpleInput" as={Col}>
-              <Form.Label>Search Jobs</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter text"
+                placeholder="Search a job"
                 onChange={searchJobs}
                 value={searchValue}
               />
